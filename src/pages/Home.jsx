@@ -25,7 +25,7 @@ function Home() {
     }
 
     return (
-        <div className='flex flex-col items-center h-screen'>
+        <div className='flex flex-col items-center h-screen bg-gradient-to-tr from-custom3 to-custom4'>
             <div className='flex flex-col w-96 mt-56'>
                 <Card singleJoke={singleJoke} twoPartJoke={twoPartJoke} />
                 <Button getJoke={getJoke}/>
