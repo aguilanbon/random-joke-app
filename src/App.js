@@ -1,9 +1,10 @@
 import './index.css';
+import Home from './pages/Home';
 
 function App() {
   return (
-    <div className="App">
-      <h1 className='text-3xl font-bold underline text-red-400'>Hello again</h1>
+    <div className="flex w-screen h-screen bg-slate-100">
+      <Home />
     </div>
   );
 }
