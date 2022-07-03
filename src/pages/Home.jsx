@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../index.css'
 
 function Home() {
@@ -12,11 +12,13 @@ function Home() {
         console.log(response.data);
         if (response.data.type === 'single') {
             setSingleJoke(response.data.joke)
+            setTwoPartJoke('')
         } else {
             setTwoPartJoke({
                 setup: response.data.setup,
                 delivery: response.data.delivery
             })
+            setSingleJoke('')
         }
     }
 
