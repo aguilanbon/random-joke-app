@@ -8,7 +8,7 @@ module.exports = {
         'custom2' : '#3B4371',
         'custom3' : '#1D2671',
         'custom4' : '#C33764',
-        'custom5' : '#DBE6F6'
+        'custom5' : '#ffffff'
       }
     },
   },

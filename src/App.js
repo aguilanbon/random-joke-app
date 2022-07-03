@@ -1,11 +1,14 @@
+import { GlobalProvider } from './helpers/GlobalContext';
 import './index.css';
 import Home from './pages/Home';
 
 function App() {
   return (
-    <div className="">
-      <Home />
-    </div>
+    <GlobalProvider>
+      <div className="">
+        <Home />
+      </div>
+    </GlobalProvider>
   );
 }
 

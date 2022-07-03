@@ -4,8 +4,9 @@ import Button from '../components/Button'
 import Card from '../components/Card'
 import '../index.css'
 
-function Home() {
 
+function Home() {
+    
     const [singleJoke, setSingleJoke] = useState('')
     const [twoPartJoke, setTwoPartJoke] = useState({})
 
@@ -26,7 +27,7 @@ function Home() {
 
     return (
         <div className='flex flex-col items-center h-screen bg-gradient-to-tr from-custom3 to-custom4'>
-            <div className='flex flex-col w-96 mt-56'>
+            <div className='flex flex-col min-w-96 max-w-2xl mt-56'>
                 <Card singleJoke={singleJoke} twoPartJoke={twoPartJoke} />
                 <Button getJoke={getJoke}/>
             </div>
