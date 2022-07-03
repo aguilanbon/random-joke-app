@@ -26,11 +26,7 @@ function Home() {
 
     return (
         <div className='flex flex-col'>
-            <Card />
-            {singleJoke ? <p>{singleJoke}</p> : <>
-                <h2 className=''>{twoPartJoke.setup}</h2>
-                <p>{twoPartJoke.delivery}</p>
-            </>}
+            <Card singleJoke={singleJoke} twoPartJoke={twoPartJoke} />
             <Button getJoke={getJoke}/>
         </div>
     )
