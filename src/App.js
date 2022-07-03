@@ -1,9 +1,9 @@
-import './App.css';
+import './index.css';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello again</h1>
+      <h1 className='text-3xl font-bold underline text-red-400'>Hello again</h1>
     </div>
   );
 }
