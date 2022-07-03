@@ -1,5 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
+import Button from '../components/Button'
+import Card from '../components/Card'
 import '../index.css'
 
 function Home() {
@@ -24,11 +26,12 @@ function Home() {
 
     return (
         <div className='flex flex-col'>
+            <Card />
             {singleJoke ? <p>{singleJoke}</p> : <>
                 <h2 className=''>{twoPartJoke.setup}</h2>
                 <p>{twoPartJoke.delivery}</p>
             </>}
-            <button className='font-bold bg-green-400 text-red-400' onClick={() => getJoke()}>Get Joke</button>
+            <Button getJoke={getJoke}/>
         </div>
     )
 }
