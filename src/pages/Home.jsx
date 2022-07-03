@@ -25,9 +25,11 @@ function Home() {
     }
 
     return (
-        <div className='flex flex-col'>
-            <Card singleJoke={singleJoke} twoPartJoke={twoPartJoke} />
-            <Button getJoke={getJoke}/>
+        <div className='flex flex-col items-center h-screen'>
+            <div className='flex flex-col w-96 mt-56'>
+                <Card singleJoke={singleJoke} twoPartJoke={twoPartJoke} />
+                <Button getJoke={getJoke}/>
+            </div>
         </div>
     )
 }
