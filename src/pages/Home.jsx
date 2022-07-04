@@ -6,7 +6,7 @@ import '../index.css'
 
 
 function Home() {
-    
+
     const [singleJoke, setSingleJoke] = useState('')
     const [twoPartJoke, setTwoPartJoke] = useState({})
     const [isEmpty, setIsEmpty] = useState(true)
@@ -28,10 +28,10 @@ function Home() {
     }
 
     return (
-        <div className='flex flex-col items-center h-screen bg-gradient-to-tr from-custom3 to-custom4'>
-            <div className='flex flex-col min-w-96 max-w-2xl mt-56'>
+        <div className='flex flex-col items-center h-screen bg-gradient-to-tr from-custom3 to-custom4 justify-center'>
+            <div className='flex flex-col min-w-96 max-w-2xl'>
                 <Card singleJoke={singleJoke} twoPartJoke={twoPartJoke} isEmpty={isEmpty} />
-                <Button getJoke={getJoke}/>
+                <Button getJoke={getJoke} />
             </div>
         </div>
     )
