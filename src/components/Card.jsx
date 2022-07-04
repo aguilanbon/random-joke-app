@@ -11,6 +11,8 @@ function Card({ singleJoke, twoPartJoke, isEmpty }) {
   return (
     <AnimatePresence initial={false}>
       <motion.div whileHover={{ scale: 1.1 }} animate={{ rotateY: rotation, duration: .8 }} className='flex flex-col items-center justify-center bg-custom5 text-custom2 p-10 rounded-md shadow-2xl mx-5'>
+        {isEmpty && <p className='mb-8'>Maybe you should press the button. No?</p>}
+
         {!isHidden ? 
          <div className='flex flex-col w-48'>
           <div className="animate-pulse flex space-x-4">
@@ -44,7 +46,6 @@ function Card({ singleJoke, twoPartJoke, isEmpty }) {
         </>
         }
 
-        {isEmpty && <p className='mb-8'>Maybe you should press the button. No?</p>}
 
         {!isEmpty && <Spacer />}
 
