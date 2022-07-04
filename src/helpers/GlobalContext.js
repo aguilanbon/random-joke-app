@@ -6,10 +6,12 @@ export const GlobalProvider = ({children}) => {
 
     const [isOpen, setIsOpen] = useState(false)
     const [rotation, setRotation] = useState(0)
+    const [isHidden, setIsHidden] = useState(false)
 
     const value = {
         isOpen, setIsOpen,
-        rotation, setRotation
+        rotation, setRotation,
+        isHidden, setIsHidden
     }
 
     return (
