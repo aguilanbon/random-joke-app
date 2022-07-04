@@ -29,7 +29,7 @@ function Card({ singleJoke, twoPartJoke, isEmpty }) {
 
         {isEmpty && <p className='mb-8'>Press the button, I guess?</p>}
 
-        <Spacer />
+        {!isEmpty && <Spacer />}
 
         {isHidden && <ThumbButton />}
       </motion.div>
