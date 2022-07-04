@@ -1,11 +1,14 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Button from '../components/Button'
 import Card from '../components/Card'
+import GlobalContext from '../helpers/GlobalContext'
 import '../index.css'
 
 
 function Home() {
+
+    const { setRotation } = useContext(GlobalContext)
 
     const [singleJoke, setSingleJoke] = useState('')
     const [twoPartJoke, setTwoPartJoke] = useState({})
@@ -17,6 +20,7 @@ function Home() {
             setSingleJoke(response.data.joke)
             setTwoPartJoke('')
             setIsEmpty(false)
+            setRotation(prevState => prevState + 360)
         } else {
             setTwoPartJoke({
                 setup: response.data.setup,
@@ -24,6 +28,7 @@ function Home() {
             })
             setSingleJoke('')
             setIsEmpty(false)
+            setRotation(prevState => prevState + 360)
         }
     }
 
