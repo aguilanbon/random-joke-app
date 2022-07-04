@@ -11,7 +11,24 @@ function Card({ singleJoke, twoPartJoke, isEmpty }) {
   return (
     <AnimatePresence initial={false}>
       <motion.div whileHover={{ scale: 1.1 }} animate={{ rotateY: rotation, duration: .8 }} className='flex flex-col items-center justify-center bg-custom5 text-custom2 p-10 rounded-md shadow-2xl mx-5'>
-        {isHidden && <>
+        {!isHidden ? 
+         <div className='flex flex-col w-48'>
+          <div class="animate-pulse flex space-x-4">
+            <div class=" space-y-6 py-1">
+              <div class="h-2 bg-slate-700 rounded w-48"></div>
+              <div class="space-y-3">
+                <div class="grid grid-cols-3 gap-4">
+                  <div class="h-2 bg-slate-700 rounded col-span-2"></div>
+                  <div class="h-2 bg-slate-700 rounded col-span-1"></div>
+                </div>
+                <div class="h-2 bg-slate-700 rounded"></div>
+              </div>
+            </div>
+          </div>
+         </div>
+      :
+          <>
+          {isHidden && <>
           {singleJoke && <p>{singleJoke}</p>}
         </>}
 
@@ -32,6 +49,8 @@ function Card({ singleJoke, twoPartJoke, isEmpty }) {
         {!isEmpty && <Spacer />}
 
         {isHidden && <ThumbButton />}
+          </>
+      }
       </motion.div>
     </AnimatePresence>
   )
