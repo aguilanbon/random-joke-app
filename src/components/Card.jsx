@@ -1,9 +1,10 @@
 import React from 'react'
 import ThumbButton from './ThumbButton'
+import { motion } from 'framer-motion'
 
 function Card({ singleJoke, twoPartJoke, isEmpty }) {
   return (
-    <div className='flex flex-col items-center justify-center bg-custom5 text-custom2 p-10 rounded-md shadow-2xl'>
+    <motion.div whileHover={{ scale: 1.1 }} whileDrag className='flex flex-col items-center justify-center bg-custom5 text-custom2 p-10 rounded-md shadow-2xl'>
       {singleJoke && <p>{singleJoke}</p>}
 
       {twoPartJoke && <>
@@ -13,8 +14,8 @@ function Card({ singleJoke, twoPartJoke, isEmpty }) {
       }
 
       {isEmpty && <p className='mb-8'>Press the button, I guess?</p>}
-      <ThumbButton />
-    </div>
+      {!isEmpty && <ThumbButton />}
+    </motion.div>
   )
 }
 
