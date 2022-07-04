@@ -13,15 +13,15 @@ function Card({ singleJoke, twoPartJoke, isEmpty }) {
       <motion.div whileHover={{ scale: 1.1 }} animate={{ rotateY: rotation, duration: .8 }} className='flex flex-col items-center justify-center bg-custom5 text-custom2 p-10 rounded-md shadow-2xl mx-5'>
         {!isHidden ? 
          <div className='flex flex-col w-48'>
-          <div class="animate-pulse flex space-x-4">
-            <div class=" space-y-6 py-1">
-              <div class="h-2 bg-slate-700 rounded w-48"></div>
-              <div class="space-y-3">
-                <div class="grid grid-cols-3 gap-4">
-                  <div class="h-2 bg-slate-700 rounded col-span-2"></div>
-                  <div class="h-2 bg-slate-700 rounded col-span-1"></div>
+          <div className="animate-pulse flex space-x-4">
+            <div className=" space-y-6 py-1">
+              <div className="h-2 bg-slate-700 rounded w-48"></div>
+              <div className="space-y-3">
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="h-2 bg-slate-700 rounded col-span-2"></div>
+                  <div className="h-2 bg-slate-700 rounded col-span-1"></div>
                 </div>
-                <div class="h-2 bg-slate-700 rounded"></div>
+                <div className="h-2 bg-slate-700 rounded"></div>
               </div>
             </div>
           </div>

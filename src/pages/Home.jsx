@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useContext, useState } from 'react'
 import Button from '../components/Button'
 import Card from '../components/Card'
+import ReactsCounter from '../components/ReactsCounter'
 import GlobalContext from '../helpers/GlobalContext'
 import '../index.css'
 
@@ -36,8 +37,9 @@ function Home() {
     }
 
     return (
-        <div className='flex flex-col items-center h-screen bg-gradient-to-tr from-custom3 to-custom4 justify-center'>
+        <div className='flex flex-col items-center h-screen bg-gradient-to-tr from-custom3 to-custom4 justify-start'>
             <div className='flex flex-col min-w-96 max-w-2xl'>
+                <ReactsCounter />
                 <Card singleJoke={singleJoke} twoPartJoke={twoPartJoke} isEmpty={isEmpty} />
                 <Button getJoke={getJoke} />
             </div>
