@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import ThumbButton from './ThumbButton'
 import { motion } from 'framer-motion'
 import GlobalContext from '../helpers/GlobalContext'
+import Spacer from './Spacer'
 
 function Card({ singleJoke, twoPartJoke, isEmpty }) {
 
@@ -13,11 +14,14 @@ function Card({ singleJoke, twoPartJoke, isEmpty }) {
 
       {twoPartJoke && <>
         <h2 className='w-full text-2xl text-center'>{twoPartJoke.setup}</h2>
-        <p className='mt-8 font-bold'>{twoPartJoke.delivery}</p>
+        <p className='mt-6 font-bold'>{twoPartJoke.delivery}</p>
       </>
       }
 
       {isEmpty && <p className='mb-8'>Press the button, I guess?</p>}
+
+      <Spacer />
+
       {!isEmpty && <ThumbButton />}
     </motion.div>
   )
