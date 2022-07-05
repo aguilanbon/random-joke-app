@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import GlobalContext from '../helpers/GlobalContext'
 
-function ThumbButton({ getJoke }) {
+function ThumbButton() {
 
     const { setThumbsDown, setThumbsUp } = useContext(GlobalContext)
     const [isClicked, setIsClicked] = useState(null)
