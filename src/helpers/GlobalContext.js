@@ -7,11 +7,15 @@ export const GlobalProvider = ({children}) => {
     const [isOpen, setIsOpen] = useState(false)
     const [rotation, setRotation] = useState(0)
     const [isHidden, setIsHidden] = useState(false)
+    const [thumbsUp, setThumbsUp] = useState(0)
+    const [thumbsDown, setThumbsDown] = useState(0)
 
     const value = {
         isOpen, setIsOpen,
         rotation, setRotation,
-        isHidden, setIsHidden
+        isHidden, setIsHidden,
+        thumbsUp, setThumbsUp,
+        thumbsDown, setThumbsDown
     }
 
     return (

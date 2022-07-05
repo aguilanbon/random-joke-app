@@ -39,7 +39,7 @@ function Home() {
     return (
         <div className='flex flex-col items-center min-h-screen bg-gradient-to-tr from-custom3 to-custom4 justify-start'>
             <div className='flex flex-col min-w-96 max-w-2xl'>
-                <ReactsCounter />
+                <ReactsCounter getJoke={getJoke} />
                 <Card singleJoke={singleJoke} twoPartJoke={twoPartJoke} isEmpty={isEmpty} />
                 <Button getJoke={getJoke} />
             </div>
