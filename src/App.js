@@ -6,7 +6,7 @@ import Footer from './components/Footer'
 function App() {
   return (
     <GlobalProvider>
-      <div className="">
+      <div className="static h-auto">
         <Home />
         <Footer />
       </div>
