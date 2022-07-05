@@ -11,7 +11,7 @@ import '../index.css'
 
 function Home() {
 
-    const { setRotation, setIsHidden, showModal, setIsDisabled } = useContext(GlobalContext)
+    const { setRotation, setIsHidden, showModal, setIsDisabled, setJokeCollection, jokeCollection } = useContext(GlobalContext)
 
     const [singleJoke, setSingleJoke] = useState('')
     const [twoPartJoke, setTwoPartJoke] = useState({})
@@ -28,7 +28,7 @@ function Home() {
             setRotation(prevState => prevState + 360)
             setIsHidden(true)
             setIsDisabled(false)
-
+            setJokeCollection([...jokeCollection, {type: 'single', joke: response.data.joke}])
         } else {
             setTwoPartJoke({
                 setup: response.data.setup,
@@ -39,9 +39,10 @@ function Home() {
             setRotation(prevState => prevState + 360)
             setIsHidden(true)
             setIsDisabled(false)
-
+            setJokeCollection([...jokeCollection, {type: 'twopart', setup: response.data.setup, delivery: response.data.delivery}])
         }
-        console.log(response.data);
+
+        console.log(jokeCollection);
     }
 
     return (
