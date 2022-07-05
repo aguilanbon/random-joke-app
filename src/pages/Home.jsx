@@ -11,7 +11,7 @@ import '../index.css'
 
 function Home() {
 
-    const { setRotation, setIsHidden, showModal } = useContext(GlobalContext)
+    const { setRotation, setIsHidden, showModal, setIsDisabled } = useContext(GlobalContext)
 
     const [singleJoke, setSingleJoke] = useState('')
     const [twoPartJoke, setTwoPartJoke] = useState({})
@@ -19,6 +19,7 @@ function Home() {
 
     const getJoke = async () => {
         setIsHidden(false)
+        setIsDisabled(true)
         const response = await axios.get('https://v2.jokeapi.dev/joke/Any')
         if (response.data.type === 'single') {
             setSingleJoke(response.data.joke)
@@ -26,6 +27,8 @@ function Home() {
             setIsEmpty(false)
             setRotation(prevState => prevState + 360)
             setIsHidden(true)
+            setIsDisabled(false)
+
         } else {
             setTwoPartJoke({
                 setup: response.data.setup,
@@ -35,7 +38,10 @@ function Home() {
             setIsEmpty(false)
             setRotation(prevState => prevState + 360)
             setIsHidden(true)
+            setIsDisabled(false)
+
         }
+        console.log(response.data);
     }
 
     return (

@@ -10,6 +10,8 @@ export const GlobalProvider = ({children}) => {
     const [thumbsUp, setThumbsUp] = useState(0)
     const [thumbsDown, setThumbsDown] = useState(0)
     const [showModal, setShowModal] = useState(false)
+    const [isDisabled, setIsDisabled] = useState(false)
+
 
     const value = {
         isOpen, setIsOpen,
@@ -17,7 +19,8 @@ export const GlobalProvider = ({children}) => {
         isHidden, setIsHidden,
         thumbsUp, setThumbsUp,
         thumbsDown, setThumbsDown,
-        showModal, setShowModal
+        showModal, setShowModal,
+        isDisabled, setIsDisabled
     }
 
     return (
