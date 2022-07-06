@@ -11,7 +11,8 @@ export const GlobalProvider = ({children}) => {
     const [thumbsDown, setThumbsDown] = useState(0)
     const [showModal, setShowModal] = useState(false)
     const [isDisabled, setIsDisabled] = useState(false)
-    const [jokeCollection, setJokeCollection] = useState([])
+    const [currentJoke, setCurrentJoke] = useState(null)
+    const [liked, setLiked] = useState([])
 
 
     const value = {
@@ -22,7 +23,8 @@ export const GlobalProvider = ({children}) => {
         thumbsDown, setThumbsDown,
         showModal, setShowModal,
         isDisabled, setIsDisabled,
-        jokeCollection, setJokeCollection
+        currentJoke, setCurrentJoke,
+        liked, setLiked
     }
 
     return (
