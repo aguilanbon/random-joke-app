@@ -19,11 +19,11 @@ function Modal() {
                     {liked.map(jokes => (
                         <div key={jokes.id}>
                             {jokes.type === 'single' ?
-                                <div className='text-custom2 my-8 border-l-2 border-custom3'>
+                                <div className='text-custom2 my-4 border-l-2 border-custom3'>
                                     <p className='mx-2 text-sm'>{jokes.joke}</p>
                                 </div>
                             : 
-                                <div className='my-8 border-l-2 border-custom4'>
+                                <div className='my-4 border-l-2 border-custom4'>
                                     <p className='mx-2 text-sm'>{jokes.setup}</p>
                                     <p className='mt-2 mx-8 text-sm font-semibold'>{jokes.delivery}</p>
                                 </div>
