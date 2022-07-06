@@ -8,7 +8,7 @@ function Modal() {
     const {liked, disliked, isLiked} = useContext(GlobalContext)
 
     return (
-        <motion.div animate={{ scale: [0, 1.2, 1] }} exit={{ scale: [1, 1.1, 0] }} className='w-1/2 h-auto bg-custom5 z-50 rounded-lg p-8 relative mx-5 mt-16'>
+        <motion.div animate={{ scale: [0, 1.2, 1] }} exit={{ scale: [1, 1.1, 0] }} className='min-w-1/2 h-auto bg-custom5 z-50 rounded-lg p-8 relative mx-5 mt-16 '>
             <CloseButton />
             <div className='flex flex-col overflow-y-scroll max-h-96'>
                 <div className='flex w-full items-center justify-center mb-4'>
