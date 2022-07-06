@@ -2,10 +2,10 @@
 
 ### Packages
 
-axios
-react hooks
+axios  
+react hooks  
 framer-motion
 
-##### further enhancing my tailwind familiarization
+### further enhancing my tailwind familiarization
 
-##### exploring more animation using framer-motion
+### exploring more animation using framer-motion
