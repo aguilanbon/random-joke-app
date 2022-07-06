@@ -15,26 +15,8 @@ function Modal() {
                     <h1 className='font-semibold'>Ok, so this made you laugh?.</h1>
                 </div>
                 {isLiked ?
-                <>
-                    {liked.map(jokes => (
-                        <div key={jokes.id}>
-                            {jokes.type === 'single' ?
-                                <div className='text-custom2 my-4 border-l-2 border-custom3'>
-                                    <p className='mx-2 text-sm'>{jokes.joke}</p>
-                                </div>
-                            : 
-                                <div className='my-4 border-l-2 border-custom4'>
-                                    <p className='mx-2 text-sm'>{jokes.setup}</p>
-                                    <p className='mt-2 mx-8 text-sm font-semibold'>{jokes.delivery}</p>
-                                </div>
-                            }
-                        </div>
-
-                    ))}
-                </>
-                 : 
                 <div>
-                    {disliked.map(jokes => (
+                    {liked.map(jokes => (
                         <div key={jokes.id}>
                             {jokes.type === 'single' ?
                                 <div className='text-custom2 my-8 border-l-2 border-custom3'>
@@ -47,9 +29,27 @@ function Modal() {
                                 </div>
                             }
                         </div>
+
                     ))}
                 </div>
-                }
+                 : 
+                <div>
+                    {disliked.map(djokes => (
+                        <div key={djokes.id}>
+                            {djokes.type === 'single' ?
+                                <div className='text-custom2 my-8 border-l-2 border-custom3'>
+                                    <p className='mx-2 text-sm'>{djokes.joke}</p>
+                                </div>
+                            : 
+                                <div className='my-8 border-l-2 border-custom4'>
+                                    <p className='mx-2 text-sm'>{djokes.setup}</p>
+                                    <p className='mt-2 mx-8 text-sm font-semibold'>{djokes.delivery}</p>
+                                </div>
+                            }
+                        </div>
+                    ))}
+                </div>
+        }
             </div>
 
 
