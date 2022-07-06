@@ -28,7 +28,7 @@ function Home() {
             setRotation(prevState => prevState + 360)
             setIsHidden(true)
             setIsDisabled(false)
-            setCurrentJoke({type: 'single', joke: response.data.joke})
+            setCurrentJoke({type: 'single', joke: response.data.joke, id: response.data.id})
         } else {
             setTwoPartJoke({
                 setup: response.data.setup,
@@ -39,7 +39,7 @@ function Home() {
             setRotation(prevState => prevState + 360)
             setIsHidden(true)
             setIsDisabled(false)
-            setCurrentJoke({type: 'twopart', setup: response.data.setup, delivery: response.data.delivery})
+            setCurrentJoke({type: 'twopart', setup: response.data.setup, delivery: response.data.delivery, id: response.data.id})
         }
     }
 
