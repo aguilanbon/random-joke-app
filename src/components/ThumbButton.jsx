@@ -3,7 +3,7 @@ import GlobalContext from '../helpers/GlobalContext'
 
 function ThumbButton() {
 
-    const { setThumbsDown, setThumbsUp, setLiked, currentJoke, liked } = useContext(GlobalContext)
+    const { setThumbsDown, setThumbsUp, setLiked, currentJoke, liked, disliked, setDisliked, setIsLiked } = useContext(GlobalContext)
     const [isClicked, setIsClicked] = useState(null)
 
     const handleThumbAction = (type) => {
@@ -11,8 +11,11 @@ function ThumbButton() {
         if(type === 'up') {
             setThumbsUp(prev => prev + 1)
             setLiked([...liked, currentJoke])
+            setIsLiked(true)
         } else {
             setThumbsDown(prev => prev + 1)
+            setDisliked([...disliked, currentJoke])
+            setIsLiked(false)
         }
     }
 

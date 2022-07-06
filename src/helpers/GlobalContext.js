@@ -13,6 +13,8 @@ export const GlobalProvider = ({children}) => {
     const [isDisabled, setIsDisabled] = useState(false)
     const [currentJoke, setCurrentJoke] = useState(null)
     const [liked, setLiked] = useState([])
+    const [disliked, setDisliked] = useState([])
+    const [isLiked, setIsLiked] = useState(null)
 
 
     const value = {
@@ -24,7 +26,9 @@ export const GlobalProvider = ({children}) => {
         showModal, setShowModal,
         isDisabled, setIsDisabled,
         currentJoke, setCurrentJoke,
-        liked, setLiked
+        liked, setLiked,
+        disliked, setDisliked,
+        isLiked, setIsLiked
     }
 
     return (

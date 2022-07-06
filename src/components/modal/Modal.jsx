@@ -5,7 +5,7 @@ import GlobalContext from '../../helpers/GlobalContext'
 
 function Modal() {
 
-    const {liked} = useContext(GlobalContext)
+    const {liked, disliked, isLiked} = useContext(GlobalContext)
 
     return (
         <motion.div animate={{ scale: [0, 1.2, 1] }} exit={{ scale: [1, 1.1, 0] }} className='w-1/2 h-auto bg-custom5 z-50 rounded-lg p-8 relative mx-5 mt-16'>
@@ -14,7 +14,8 @@ function Modal() {
                 <div className='flex w-full items-center justify-center mb-4'>
                     <h1 className='font-semibold'>Ok, so this made you laugh?.</h1>
                 </div>
-                <div>
+                {isLiked ?
+                <>
                     {liked.map(jokes => (
                         <div key={jokes.id}>
                             {jokes.type === 'single' ?
@@ -30,8 +31,25 @@ function Modal() {
                         </div>
 
                     ))}
+                </>
+                 : 
+                <div>
+                    {disliked.map(jokes => (
+                        <div key={jokes.id}>
+                            {jokes.type === 'single' ?
+                                <div className='text-custom2 my-8 border-l-2 border-custom3'>
+                                    <p className='mx-2 text-sm'>{jokes.joke}</p>
+                                </div>
+                            : 
+                                <div className='my-8 border-l-2 border-custom4'>
+                                    <p className='mx-2 text-sm'>{jokes.setup}</p>
+                                    <p className='mt-2 mx-8 text-sm font-semibold'>{jokes.delivery}</p>
+                                </div>
+                            }
+                        </div>
+                    ))}
                 </div>
-
+                }
             </div>
 
 
